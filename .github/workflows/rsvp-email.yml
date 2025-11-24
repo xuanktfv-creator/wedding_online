@@ -1,0 +1,57 @@
+name: RSVP Email Workflow
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-rsvps:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Create .env file
+        run: |
+          echo "GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
+          echo "GOOGLE_SERVICE_ACCOUNT_KEY=service-account-key.json" >> .env
+          echo "GMAIL_USER=${{ secrets.GMAIL_USER }}" >> .env
+          echo "GMAIL_PASS=${{ secrets.GMAIL_PASS }}" >> .env
+          echo "SPREADSHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
+          echo "SHEET_NAME=RSVP" >> .env
+      
+      - name: Create service account key file
+        run: |
+          printf '%s\n' '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}' > service-account-key.json
+      
+      - name: Cache processed emails
+        uses: actions/cache@v4
+        id: cache-emails
+        with:
+          path: processed_emails.json
+          key: processed-emails-v1
+      
+      - name: Initialize processed_emails.json if not exists
+        run: |
+          if [ ! -f processed_emails.json ]; then
+            echo "[]" > processed_emails.json
+            echo "Created new processed_emails.json file"
+          else
+            echo "processed_emails.json already exists"
+          fi
+      
+      - name: Run RSVP email workflow
+        run: node workflow.js
+        
+      # 🚨 KHÔNG CÓ BƯỚC COMMIT/PUSH Ở ĐÂY
