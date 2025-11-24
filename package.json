@@ -1,0 +1,27 @@
+{
+  "name": "wedding-rsvp-workflow",
+  "version": "1.0.0",
+  "description": "Local workflow to process RSVP submissions and send emails",
+  "main": "workflow.js",
+  "scripts": {
+    "start": "node workflow.js",
+    "dev": "nodemon workflow.js"
+  },
+  "keywords": [
+    "wedding",
+    "rsvp",
+    "workflow",
+    "email"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^128.0.0",
+    "nodemailer": "^6.9.7",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
