@@ -128,7 +128,7 @@ async function sendEmail(to, subject, message) {
   }
   
   const mailOptions = {
-    from: `"Mạnh Hùng & Ngọc Ánh" <${GMAIL_USER}>`,
+    from: `"Long Xuân & Nguyễn Hậu" <${GMAIL_USER}>`,
     to: to,
     subject: subject,
     html: message,
@@ -357,4 +357,5 @@ if (require.main === module) {
 }
 
 module.exports = { checkForNewRows, sendEmail };
+
 
