@@ -2081,7 +2081,7 @@ const germanyDate = new Date('2026-02-06T08:00:00').getTime();
       const emailExists = await checkEmailExists(normalizedEmail);
       
       if (emailExists) {
-        alert('Diese E-Mail-Adresse wurde bereits für eine Zusage verwendet. Falls du deine Zusage ändern möchtest, kontaktiere uns bitte direkt.');
+        alert('Địa chỉ email này đã được sử dụng để gửi xác nhận tham dự trước đó. Nếu bạn muốn thay đổi xác nhận tham dự, vui lòng liên hệ trực tiếp với chúng tôi.');
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         return;
@@ -2128,7 +2128,7 @@ const germanyDate = new Date('2026-02-06T08:00:00').getTime();
               responseText.toLowerCase().includes('bereits') || 
               responseText.toLowerCase().includes('schon') ||
               responseText.toLowerCase().includes('existiert')) {
-            alert('Diese E-Mail-Adresse wurde bereits für eine Zusage verwendet. Falls du deine Zusage ändern möchtest, kontaktiere uns bitte direkt.');
+            alert('Địa chỉ email này đã được sử dụng để gửi xác nhận tham dự trước đó. Nếu bạn muốn thay đổi xác nhận tham dự, vui lòng liên hệ trực tiếp với chúng tôi.');
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
             return;
@@ -2156,9 +2156,9 @@ const germanyDate = new Date('2026-02-06T08:00:00').getTime();
         if (normalizedEmail) {
           submittedEmails.add(normalizedEmail);
         }
-        alert('Deine Zusage wurde gesendet! Falls du keine Bestätigung siehst, lass es uns bitte wissen.');
+        alert('Xác nhận tham dự của bạn đã được gửi! Nếu bạn không thấy thông báo xác nhận, xin hãy cho chúng tôi biết.');
       } catch (fallbackErr) {
-        alert('Es gab ein Problem beim Senden. Bitte versuche es später erneut oder kontaktiere uns direkt.');
+        alert('Đã xảy ra lỗi khi gửi. Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi.');
       }
       form.reset();
       submitBtn.disabled = false;
@@ -2185,3 +2185,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </html>
+
