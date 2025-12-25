@@ -4,112 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Long Xuân & Nguyễn Hậu — Lễ cưới 2026</title>
-
-
-  
-  <!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<title>Thiệp cưới online</title>
-
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f5efe6;
-  font-family: 'Playfair Display', serif;
-}
-
-/* Khung thiệp */
-.invitation {
-  width: 320px;
-  height: 220px;
-  perspective: 1200px;
-  cursor: pointer;
-}
-
-/* Bìa thiệp */
-.card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1.2s ease;
-}
-
-/* Khi mở */
-.invitation.open .card {
-  transform: rotateY(-180deg);
-}
-
-/* Mặt trước */
-.front, .inside {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* Mặt ngoài */
-.front {
-  background: linear-gradient(135deg, #c89b3c, #f3d37a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 26px;
-  letter-spacing: 2px;
-}
-
-/* Bên trong */
-.inside {
-  background: white;
-  transform: rotateY(180deg);
-  padding: 20px;
-  text-align: center;
-}
-
-.inside h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 40px;
-  margin: 10px 0;
-}
-
-.inside p {
-  font-size: 16px;
-  margin: 6px 0;
-}
-</style>
-</head>
-
-<body>
-
-<div class="invitation" onclick="this.classList.toggle('open')">
-  <div class="card">
-    <div class="front">
-      💍 Wedding Invitation
-    </div>
-    <div class="inside">
-      <h1>Long Xuân & Nguyễn Hậu</h1>
-      <p>Trân trọng kính mời</p>
-      <p>Đến dự lễ thành hôn của chúng tôi</p>
-      <p>🗓 20.01.2026</p>
-      <p>📍 Nhà Trai</p>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
-
-  
-  
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
@@ -2298,6 +2192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </html>
+
 
 
 
